@@ -237,9 +237,11 @@ input[type="number"] {
 #bannerWrapper .container {
     height: 100%;
 }
+
 .heroSwiper {
     height: 100%;
 }
+
 .bannerLayout {
     position: absolute;
     bottom: 0%;
@@ -313,7 +315,7 @@ input[type="number"] {
     height: 100%;
 }
 
-.bannerText h1 {
+.bannerText h2 {
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 700;
@@ -321,50 +323,10 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
-.bannerText ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-#bannerWrapper .bn-swiper-button-prev {
-    left: 40% !important;
-    transform: rotate(180deg);
-}
-
-.bannerText ul li {
-    font-size: 15px;
-    color: #a6a6a6;
-    font-weight: 300;
-}
-
-.swiperControl {
-    z-index: 99;
-    cursor: pointer;
-    position: absolute;
-    left: 45% !important;
-    bottom: 15%;
-    top: initial !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #eee;
-    transition: all 0.3s ease-in-out;
-    padding: 10px;
-}
-
-.swiperControl:hover {
-    background: #222;
-}
-
-.swiperControl svg path {
-    fill: #000;
-}
-
-.swiperControl:hover svg path {
-    fill: #fff;
+.bannerText p {
+    line-height: 30px;
+    width: 70%;
+    margin-bottom: 30px;
 }
 
 .bannerText a {
@@ -375,6 +337,22 @@ input[type="number"] {
     border-radius: 8px;
     font-weight: 300;
     transition: all 0.3s ease-in-out;
+}
+
+.wave {
+    animation-name: wave;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
 }
 
 .bannerText a:hover {
@@ -414,10 +392,6 @@ input[type="number"] {
 
 #aboutRight {
     width: 55%;
-}
-
-#aboutRight span {
-    font-size: 18px;
 }
 
 #aboutRight h2 {
@@ -1176,6 +1150,7 @@ footer * {
     transition: all .2s ease-in-out;
     position: relative;
 }
+
 #blogTopContent a::after {
     content: "";
     position: absolute;
@@ -1186,12 +1161,15 @@ footer * {
     background: #000;
     transition: all .2s ease-in-out;
 }
+
 #blogTopContent a svg {
     transition: all .2s ease-in-out;
 }
+
 #blogTopContent a:hover svg {
     transform: translateX(5px);
 }
+
 #blogTopContent a:hover::after {
     width: 100%;
 }

@@ -32,10 +32,6 @@ $(document).ready(() => {
             disableOnInteraction: false,
         },
         loop: true,
-        navigation: {
-            nextEl: ".bn-swiper-button-next",
-            prevEl: ".bn-swiper-button-prev",
-        },
     });
 
     Fancybox.bind('[data-fancybox="gallery"]', {});
