@@ -237,13 +237,15 @@ input[type="number"] {
 #bannerWrapper .container {
     height: 100%;
 }
-
-#bannerLayout {
+.heroSwiper {
+    height: 100%;
+}
+.bannerLayout {
     position: absolute;
     bottom: 0%;
     right: 0;
-    transform: translate(0%, 0%);
-    width: 55%;
+    transform: translate(15%, 0%);
+    width: 65%;
     height: 100%;
     pointer-events: none;
     z-index: 1;
@@ -253,7 +255,7 @@ input[type="number"] {
     justify-content: center;
 }
 
-#bannerLayout::after {
+.bannerLayout::after {
     content: "";
     position: absolute;
     top: 20%;
@@ -265,7 +267,7 @@ input[type="number"] {
     z-index: 2;
 }
 
-#bannerLayout::before {
+.bannerLayout::before {
     content: "";
     position: absolute;
     top: 16%;
@@ -293,7 +295,7 @@ input[type="number"] {
     }
 }
 
-#bannerLayout img {
+.bannerLayout img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -307,12 +309,8 @@ input[type="number"] {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-
-.heroSwiper {
     width: 60%;
     height: 100%;
-    margin-left: 0px;
 }
 
 .bannerText h1 {
@@ -330,8 +328,9 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
-#bannerWrapper .swiper-button-next {
-    left: 5%;
+#bannerWrapper .bn-swiper-button-prev {
+    left: 40% !important;
+    transform: rotate(180deg);
 }
 
 .bannerText ul li {
@@ -341,15 +340,19 @@ input[type="number"] {
 }
 
 .swiperControl {
-    bottom: 20px;
+    z-index: 99;
+    cursor: pointer;
+    position: absolute;
+    left: 45% !important;
+    bottom: 15%;
     top: initial !important;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
-    padding: 10px;
     background: #eee;
     transition: all 0.3s ease-in-out;
+    padding: 10px;
 }
 
 .swiperControl:hover {
@@ -603,7 +606,11 @@ input[type="number"] {
 }
 
 #blogWrapper .blogCard:hover::before {
-    opacity: 0.8; /* və ya istədiyin səviyyə */
+    opacity: 0.8;
+}
+
+#blogWrapper .blogCard:hover {
+    transform: translateY(-10px);
 }
 
 /*accordion*/
@@ -644,6 +651,7 @@ input[type="number"] {
     border-radius: 12px;
     border: 1px solid #ddd;
     cursor: pointer;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
 .accordionContent {
@@ -668,6 +676,7 @@ input[type="number"] {
     max-width: 900px;
     margin-inline: auto;
     border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px 3px;
 }
 
 #callToActionWrapper > p {
@@ -689,6 +698,7 @@ input[type="number"] {
     outline: none;
     padding: 15px 20px;
     border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 #formWrapper textarea {
@@ -699,6 +709,7 @@ input[type="number"] {
     margin-top: 20px;
     resize: none;
     outline: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 #formWrapper button {
@@ -711,6 +722,7 @@ input[type="number"] {
     display: inline-block;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 #formWrapper button:hover {
@@ -722,9 +734,11 @@ footer {
     background: #2C2C2C;
     padding-top: 30px;
 }
+
 footer * {
     color: #fff;
 }
+
 #footerTop {
     display: flex;
     justify-content: space-between;
@@ -796,6 +810,17 @@ footer * {
     border-bottom: 1px solid #ddd;
 }
 
+#footerMid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#footerMid a:hover {
+    transform: translateY(-1px);
+}
+
 #footerBottom {
     padding-block: 25px;
 }
@@ -829,8 +854,9 @@ footer * {
     gap: 15px;
 }
 
-#galleryWrapper a {
+#galleryWrapper .galleryCat {
     width: 23%;
+    border-radius: 8px;
     text-align: center;
     color: #000;
     background: #eee;
@@ -838,13 +864,8 @@ footer * {
     transition: all 0.3s ease-in-out;
 }
 
-#galleryWrapper a.active {
-    background: #222;
-    color: #fff;
-}
-
-#galleryWrapper a:hover {
-    background: #222;
+#galleryWrapper .galleryCat.active {
+    background: #f99a00;
     color: #fff;
 }
 
@@ -882,9 +903,20 @@ footer * {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: #eee;
     border-radius: 4px;
     transition: all .3s ease-in-out;
+}
+
+.headerSocials a:nth-of-type(1) {
+    background: #04C404;
+}
+
+.headerSocials a:nth-of-type(2) {
+    background: #00A6FF;
+}
+
+.headerSocials a:nth-of-type(3) {
+    background: #912EB9;
 }
 
 .headerSocials a:hover {
@@ -1137,7 +1169,29 @@ footer * {
 
 #blogTopContent a {
     color: #000;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all .2s ease-in-out;
+    position: relative;
+}
+#blogTopContent a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #000;
+    transition: all .2s ease-in-out;
+}
+#blogTopContent a svg {
+    transition: all .2s ease-in-out;
+}
+#blogTopContent a:hover svg {
+    transform: translateX(5px);
+}
+#blogTopContent a:hover::after {
+    width: 100%;
 }

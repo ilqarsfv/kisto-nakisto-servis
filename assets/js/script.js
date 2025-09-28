@@ -33,8 +33,10 @@ $(document).ready(() => {
         },
         loop: true,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".bn-swiper-button-next",
+            prevEl: ".bn-swiper-button-prev",
         },
     });
+
+    Fancybox.bind('[data-fancybox="gallery"]', {});
 })
